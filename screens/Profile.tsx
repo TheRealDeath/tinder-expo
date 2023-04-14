@@ -33,12 +33,12 @@ const Profile = () => {
           <View style={styles.top}>
             <TouchableOpacity>
               <Icon
-                name="chevron-back"
+                name="chevron-back" 
                 size={20}
                 color={WHITE}
                 style={styles.topIconLeft}
-              />
-            </TouchableOpacity>
+              /> 
+            </TouchableOpacity> 
 
             <TouchableOpacity>
               <Icon
