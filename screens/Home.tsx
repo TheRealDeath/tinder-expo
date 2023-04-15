@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <ImageBackground
-      source={require("../assets/images/bg.png")}
+      source={require("/Users/bsidesdfw/Desktop/tinder-expo/assets/images/bg.png")}
       style={styles.bg}
     >
       <View style={styles.containerHome}>
