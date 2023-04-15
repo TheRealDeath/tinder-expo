@@ -46,13 +46,14 @@ export type DataT = {
   description: string;
   message: string;
   image: any;
-  isHidden: boolean;
   bloodType: string;
   latitude: Number; 
   longitude: Number;
   starSign?: string;
-  eyeColour?: string;
+  eyeColor?: string;
   age?: string;
+  height?: string;
+  job?: string;
   info1?: string;
   info2?: string;
   info3?: string;

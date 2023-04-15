@@ -6,6 +6,7 @@ export const WHITE = "#FFFFFF";
 export const GRAY = "#757E90";
 export const DARK_GRAY = "#363636";
 export const BLACK = "#000000";
+export const PINK = "#ffb2fd";
 
 export const ONLINE_STATUS = "#46A575";
 export const OFFLINE_STATUS = "#D04949";
@@ -120,8 +121,16 @@ export default StyleSheet.create({
     // display: "flex",
   },
   optionDropdown: {
-    width: 50,
-    height: 50,
+    minHeight: 10,
+    minWidth: 200,
+    backgroundColor: PRIMARY_COLOR,
+    borderColor: BLACK,
+    borderRadius: 30,
+    color: WHITE,
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    shadowColor: DARK_GRAY,
+    shadowOffset: { height: 10, width: 0 },
   },
   popupButton: {
     alignItems: "center",
