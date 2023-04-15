@@ -12,21 +12,20 @@ export default function DropdownItem(props : any) {
     const handleChange = (e : any) => {
         setValue(e.target.value);
         if(document.getElementById(props.id).checked) {
-            document.getElementById("hi").innerHTML = props.id;
+            // document.getElementById("hi").innerHTML = props.id;
             stack[props.id] = e.target.value;
         }
     };
-      return (
+    return (
         <div>
-            <p id="hi">{`${arr} ${arr.length}` }</p>
-           <input type="checkbox" style={styles.popupCheckBox} id={props.id}></input>
-              <select value={value} onChange={handleChange}>
-              {arr.map((item: any) => {
-                    return (
+            <input type="checkbox" style={styles.popupCheckBox} id={props.id}></input>
+            <select value={value} onChange={handleChange}>
+            {arr.map((item: any) => {
+                return (
                     <option style={styles.optionDropdown} value={item}>{`${item}`}</option>
-                    );
-              })}
-              </select>
+                );
+            })}
+            </select>
         </div>
       );
 }
