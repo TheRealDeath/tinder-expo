@@ -27,7 +27,11 @@ export default function Filters(this: any) {
       <Modal isVisible={isModalVisible} onBackButtonPress={() => {}} onBackdropPress={() => {}} style={styles.popup}>
           <View style={styles.popupView}>
             <TouchableOpacity style={styles.popupView} onPress={makeModalTrue}>
-              <Dropdown></Dropdown>
+              <Dropdown stack={{
+                bloodType: "N/A",
+                age: NaN,
+                occupation: "N/A",
+              }}></Dropdown>
             </TouchableOpacity>
             <View style={styles.popupButton}>
                 <TouchableOpacity  onPress={handleModal}>

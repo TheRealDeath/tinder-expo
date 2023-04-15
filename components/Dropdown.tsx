@@ -1,32 +1,21 @@
 import * as React from "react";
-import { Text, TouchableOpacity, View, Image} from "react-native";
-import Modal from "react-native-modal";
-import Icon from "./Icon";
-import styles, { DARK_GRAY } from "../assets/styles";
-const con = {
-    prop: [
-        {
-            value: "ja"
-        }
-    ]
-};
+import styles from "../assets/styles";
+import DropdownItem from "./DropdownItem";
 
-export default function Dropdown(this: any) { 
-    let [value, setValue] = React.useState('fruit');
-    const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-        setValue(event.target.value);
+export default function Dropdown(props : any) {
+  let stack : any = props.stack; 
+    function fun() {
+      let s : string = "";
+      for(let key in stack) {
+        s += stack[key];
+      }
+      document.getElementById("test").innerHTML = s;
     };
-    let arr =con.prop;
-    return (
-    <label>
-       <select value={value} onChange={handleChange}>
-        {arr.map((temp) => (
-            <option value={temp.value}></option>
-        ))}
-
-       </select>
-
-     </label>
-    );
+      return (
+        <div>
+           <DropdownItem stack={stack} id={"bloodType"} value={"blank"} arr={["a+","a-","b+","b-"]}></DropdownItem>
+            <p id="test">{`You selected ${stack.bloodType}`}</p>
+            <button style={styles.button} onClick={fun}></button>
+        </div>
+      );
 }
-

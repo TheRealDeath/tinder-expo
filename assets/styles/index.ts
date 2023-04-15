@@ -99,7 +99,6 @@ export default StyleSheet.create({
     shadowColor: DARK_GRAY,
     shadowOffset: { height: 10, width: 0 },
     display: "flex",
-    flexFlow: "row norap",
   },
   popupView: {
     display:"flex",
@@ -110,6 +109,19 @@ export default StyleSheet.create({
     verticalAlign: "middle",
     paddingTop: 150,
     flex:1,
+  },
+  popupCheckBox: {
+    borderRadius: 30,
+    backgroundColor: PRIMARY_COLOR,
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    shadowColor: DARK_GRAY,
+    shadowOffset: { height: 10, width: 0 },
+    // display: "flex",
+  },
+  optionDropdown: {
+    width: 50,
+    height: 50,
   },
   popupButton: {
     alignItems: "center",
