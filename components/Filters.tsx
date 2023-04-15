@@ -5,14 +5,9 @@ import Icon from "./Icon";
 import styles, { DARK_GRAY } from "../assets/styles";
 import Dropdown from "./Dropdown";
 
+
 export default function Filters(props : any) {
-  let stack : any = {
-    bloodType: "N/A",
-    age: "N/A",
-    occupation: "N/A",
-    distance: "N/A",
-    height: "N/A",
-  };
+  let stack : any = props.stack;
   const [isModalVisible, setIsModalVisible] = React.useState(false);
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
   const [open, setOpen] = React.useState(false);
@@ -26,13 +21,6 @@ export default function Filters(props : any) {
   function getStuff() {
     return isModalVisible;
   }
-  function fun() {
-    let s : string = "";
-    for(let key in stack) {
-      s += stack[key]+"\n";
-    }
-    document.getElementById("test").innerHTML = s;
-  };
   return (
     <TouchableOpacity style={styles.filters} onPress={handleModal}>
       <Text style={styles.filtersText}>
@@ -43,13 +31,9 @@ export default function Filters(props : any) {
             <TouchableOpacity style={styles.popupView} onPress={makeModalTrue}>
               <Dropdown id="bloodType" arr={["N/A","A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]} stack={stack}></Dropdown>
               <Dropdown id="age" arr={["N/A","18-24","24-40","40-50","50-60","70-100"]} stack={stack}></Dropdown>
-              <Dropdown id="occupation" arr={["N/A","School teacher","the president","ceo"]} stack={stack}></Dropdown>
+              <Dropdown id="occupation" arr={["N/A","School teacher","the president obama","ceo"]} stack={stack}></Dropdown>
               <Dropdown id="distance" arr={["N/A","closest (10 miles)","close (100 miles)","far (1000 miles)"]} stack={stack}></Dropdown>
               <Dropdown id="height" arr={["shorter","matching","taller"]} stack={stack}></Dropdown>
-            </TouchableOpacity>
-            <p id="test">dafjsdk;l</p>
-            <TouchableOpacity onPress={fun}>
-              <button style={styles.button} onClick={fun} ></button>
             </TouchableOpacity>
             <View style={styles.popupButton}>
                 <TouchableOpacity  onPress={handleModal}>
